@@ -27,8 +27,10 @@ type Result struct {
 func Handler(writer http.ResponseWriter, request *http.Request) {
 
 	writer.Header().Set("Content-Type", "application/json")
-	writer.Header().Set("Access-Control-Allow-Origin", "*")
-	writer.Header().Set("Access-Control-Allow-Headers", "*")
+	writer.Header().Set("Access-Control-Allow-Origin", request.Header.Get("Origin"))
+	writer.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
+
+
 	query := request.URL.Query()
 	starts, ok1 := query["start"]
 	ends, ok2 := query["end"]
