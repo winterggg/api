@@ -1,4 +1,4 @@
-package isWorkDay
+package handle
 
 import (
 	"bytes"
