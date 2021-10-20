@@ -35,7 +35,7 @@ func getResult(t *testing.T, query string) []bool {
 	recorder := httptest.NewRecorder()
 	request, _ := http.NewRequest("GET", query, nil)
 	WorkDay(recorder, request)
-	var o Output
+	var o OutputWorkDay
 	err := json.Unmarshal(recorder.Body.Bytes(), &o)
 	if err != nil {
 		t.Errorf("error")
