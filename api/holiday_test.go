@@ -14,7 +14,7 @@ func init() {
 	_ = os.Setenv("https_proxy", "http://127.0.0.1:1080")
 }
 
-func TestHandler(t *testing.T) {
+func TestHoliday(t *testing.T) {
 	tests := []struct {
 		start, end string
 		days       int
@@ -40,7 +40,7 @@ func TestHandler(t *testing.T) {
 func getResult(s, e string, t *testing.T) int {
 	recorder := httptest.NewRecorder()
 	request, _ := http.NewRequest("GET", "?start="+s+"&end="+e, nil)
-	Handler(recorder, request)
+	Holiday(recorder, request)
 	var o Output
 	err := json.Unmarshal(recorder.Body.Bytes(), &o)
 	if err != nil {

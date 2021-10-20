@@ -24,7 +24,7 @@ type Result struct {
 	Transfer []string `json:"transfer"`
 }
 
-func Handler(writer http.ResponseWriter, request *http.Request) {
+func Holiday(writer http.ResponseWriter, request *http.Request) {
 
 	writer.Header().Set("Content-Type", "application/json")
 	writer.Header().Set("Access-Control-Allow-Origin", "*")
